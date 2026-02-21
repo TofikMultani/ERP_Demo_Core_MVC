@@ -1,0 +1,50 @@
+﻿@model ERP_Demo_Core_MVC.Models.StudentModel
+
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<div class="card shadow p-4">
+    <h4 class="mb-4">Edit Student</h4>
+
+    <form asp-action="EditStudent" method="post">
+
+        <input type="hidden" asp-for="Student_Roll" />
+
+        <div class="mb-3">
+            <label class="form-label">Student Name</label>
+            <input asp-for="Student_Name" class="form-control" />
+            <span asp-validation-for="Student_Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Date of Birth</label>
+            <input asp-for="Student_DOB" type="date" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input asp-for="Student_Age" type="number" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select asp-for="Student_Gender" class="form-select">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-warning">
+            <i class="bi bi-pencil-square"></i> Update
+        </button>
+
+        <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
