@@ -1,58 +1,29 @@
 ﻿@model ERP_Demo_Core_MVC.Models.StudentModel
-
 @{
     ViewData["Title"] = "Delete Student";
 }
 
-<div class="container mt-4">
-    <div class="card shadow-lg border-0">
+<div class="card p-4 shadow-sm">
 
-        <div class="card-header bg-danger text-white">
-            <h4 class="mb-0">
-                <i class="bi bi-trash"></i> Delete Student
-            </h4>
-        </div>
-
-        <div class="card-body">
-
-            <div class="alert alert-danger">
-                <strong>Warning!</strong> Are you sure you want to delete this student?
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-4 fw-bold">Student Name:</div>
-                <div class="col-md-8">@Model.Student_Name</div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-4 fw-bold">Date of Birth:</div>
-                <div class="col-md-8">@Model.Student_DOB</div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-4 fw-bold">Age:</div>
-                <div class="col-md-8">@Model.Student_Age</div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col-md-4 fw-bold">Gender:</div>
-                <div class="col-md-8">@Model.Student_Gender</div>
-            </div>
-
-            <form asp-action="DeleteStudent" method="post">
-                <input type="hidden" asp-for="Student_Roll" />
-
-                <div class="text-end">
-                    <button type="submit" class="btn btn-danger px-4">
-                        <i class="bi bi-trash"></i> Delete
-                    </button>
-
-                    <a asp-action="Index" class="btn btn-secondary ms-2 px-4">
-                        Cancel
-                    </a>
-                </div>
-            </form>
-
-        </div>
+    <div class="alert alert-danger rounded-3">
+        <strong>Warning!</strong> Are you sure you want to delete this student?
     </div>
+
+    <p><strong>Name:</strong> @Model.Student_Name</p>
+    <p><strong>DOB:</strong> @Model.Student_DOB</p>
+    <p><strong>Age:</strong> @Model.Student_Age</p>
+    <p><strong>Gender:</strong> @Model.Student_Gender</p>
+
+    <form asp-action="DeleteStudent" method="post">
+        <input type="hidden" asp-for="Student_Roll" />
+
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Delete
+        </button>
+
+        <a asp-action="Index" class="btn btn-secondary ms-2">
+            Cancel
+        </a>
+    </form>
+
 </div>
