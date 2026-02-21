@@ -1,13 +1,25 @@
-using System.Diagnostics;
 using ERP_Demo_Core_MVC.Models;
+using ERP_Demo_Core_MVC.Models.DATABASEFOLDER;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace ERP_Demo_Core_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly SchoolDB _db;
+
+        public HomeController(SchoolDB db)
         {
+            _db = db;
+        }
+
+        // GET: /Home/Index
+        public async Task<IActionResult> Index()
+        {
+                    var totalStudents = await _db.Students.CountAsync();
+            ViewBag.TotalStudents = totalStudents;
             return View();
         }
 
