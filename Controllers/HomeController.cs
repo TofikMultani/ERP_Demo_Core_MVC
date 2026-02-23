@@ -18,8 +18,10 @@ namespace ERP_Demo_Core_MVC.Controllers
         // GET: /Home/Index
         public async Task<IActionResult> Index()
         {
-                    var totalStudents = await _db.Students.CountAsync();
+            var totalStudents = await _db.Students.CountAsync();
             ViewBag.TotalStudents = totalStudents;
+            var totalTeachers = await _db.Teachers.CountAsync();
+            ViewBag.TotalTeachers = totalTeachers;
             return View();
         }
 

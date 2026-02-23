@@ -11,5 +11,6 @@ namespace ERP_Demo_Core_MVC.Models.DATABASEFOLDER
         }
 
         public DbSet<StudentModel> Students { get; set; }
+        public DbSet<TeacherModel> Teachers { get; set; }
     }
 }

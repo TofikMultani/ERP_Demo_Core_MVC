@@ -48,6 +48,42 @@ namespace ERP_Demo_Core_MVC.Migrations
 
                     b.ToTable("Students");
                 });
+
+            modelBuilder.Entity("ERP_Demo_Core_MVC.Models.TeacherModel", b =>
+                {
+                    b.Property<int>("Teacher_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Teacher_Id"));
+
+                    b.Property<string>("Teacher_Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Teacher_Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Teacher_Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("Teacher_Jion_Date")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Teacher_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Teacher_Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Teacher_Id");
+
+                    b.ToTable("Teachers");
+                });
 #pragma warning restore 612, 618
         }
     }

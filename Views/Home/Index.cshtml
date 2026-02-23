@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Dashboard";
     var totalStudents = ViewBag.TotalStudents ?? 0;
+    var totalTeachers = ViewBag.TotalTeachers ?? 0;
 }
 
 <div class="row">
@@ -15,7 +16,7 @@
     <div class="col-md-3 mb-4">
         <div class="card bg-success text-white p-3">
             <h6>Total Teachers</h6>
-            <h2>75</h2>
+            <h2>@totalTeachers</h2>
         </div>
     </div>
 
